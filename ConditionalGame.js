@@ -28,10 +28,26 @@
 	Tip: Don't forget to import the readline-sync module!
 
   -------------------------------------------- */
+//   npm init -y
+//   npm install readline-sync
+// Node ConditionalGame.js
 
+//   const readline = require('readline-sync');
 
+//   const name = readline.question('What is your name? ');
+//   const age = readline.question('How old are you? ');
+//   const city = readline.question('Which city do you live in? ');
+  
+//   console.log(`Hello, ${name}! You are ${age} years old and you live in ${city}.`);
+  
+//   const readline = require('readline-sync');
 
-
+//   const noun = readline.question('Enter a noun: ');
+//   const adjective = readline.question('Enter an adjective: ');
+//   const verb = readline.question('Enter a verb: ');
+  
+//   console.log(`The ${adjective} ${noun} ${verb} over the moon.`);
+  
 
 
 
@@ -48,7 +64,8 @@
 	Part 2: Next, we need to randomly select a response from 20 options.
 
 	Randomly select a number from 0 - 19 
-	Use that to select from the following responses:
+	Use that to select from the following 
+	responses:
 		0 - It is certain.
 		1 - It is decidedly so.
 		2 - Without a doubt.
@@ -74,8 +91,35 @@
 
   -------------------------------------------- */
 
+  let responses = [
+ ' 0 - It is certain.',
+ " 1 - It is decidedly so.",
+"  2 - Without a doubt.",
+"  3 - Yes - definitely.",
+"  4 - You may rely on it.",
+"  5 - As I see it, yes.",
+"  6 - Most likely.",
+"  7 - Outlook good.",
+"  8 - Yes.",
+"  9 - Signs point to yes.",
+"  10 - Reply hazy, try again.",
+"  11 - Ask again later.",
+"  12 - Better not tell you now.",
+"  13 - Cannot predict now.",
+"  14 - Concentrate and ask again.",
+"  15 - Don't count on it.",
+"  16 - My reply is no." ,
+"  17 - My sources say no.",
+"  18 - Outlook not so good." ,
+"  19 - Very doubtful."
+  ]
+// Generate a random index
+const randomIndex = Math.floor(Math.random() * responses.length);
 
+// Select the response using the random index
+const selectedResponse = responses[randomIndex];
 
+console.log(selectedResponse);
 
 
 
@@ -101,9 +145,26 @@
 	
   -------------------------------------------- */
 
+  function getRandomResponse(options) {
+	const randomIndex = Math.floor(Math.random() * options.length);
+	return options[randomIndex];
+  }
 
-
-
+  const differentResponses = [
+	'Absolutely!',
+	'Definitely!',
+	'No doubt about it.',
+	'For sure!',
+	'Without a question.',
+	'Certainly!',
+	'You bet!',
+	'100% yes.',
+	'Absolutely positively!',
+	'Unquestionably!'
+  ];
+  
+  const randomResponse = getRandomResponse(differentResponses);
+  console.log(randomResponse);
 
 
 

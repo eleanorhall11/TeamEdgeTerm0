@@ -42,7 +42,24 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 
 
-
+function calculateCost() {
+	let orderCost = 0;
+  
+	let item1Price = parseFloat(prompt("Enter the price of the first item:"));
+	orderCost += item1Price;
+  
+	let item2Price = parseFloat(prompt("Enter the price of the second item:"));
+	orderCost += item2Price;
+  
+	let item3Price = parseFloat(prompt("Enter the price of the third item:"));
+	orderCost += item3Price;
+  
+	return orderCost;
+  }
+  
+  let totalCost = calculateCost();
+  console.log("Total Cost:", totalCost);
+  
 
 
 
@@ -66,7 +83,27 @@ Remember! Functions are meant to be reusable, so write a function that will work
 -------------------------------------------- */
 
 
-
+function calculatePersonCost() {
+	let itemCost = parseFloat(prompt("Enter the cost of the ordered items:"));
+	let taxRate = 0.08; // Assume 8% sales tax
+	let tipPercentage = parseFloat(prompt("Enter the tip percentage:"));
+	
+	let tax = itemCost * taxRate;
+	let tip = itemCost * (tipPercentage / 100);
+	
+	let personCost = itemCost + tax + tip;
+	return personCost;
+  }
+  
+  let personCost1 = calculatePersonCost();
+  console.log("Person 1 Cost:", personCost1);
+  
+  let personCost2 = calculatePersonCost();
+  console.log("Person 2 Cost:", personCost2);
+  
+  let personCost3 = calculatePersonCost();
+  console.log("Person 3 Cost:", personCost3);
+  
 
 
 
@@ -91,7 +128,24 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
-
+function printReceipt(personName, itemCost, tax, tip, totalCost) {
+	console.log(`--- Receipt for ${personName} ---`);
+	console.log("Item Cost:", itemCost);
+	console.log("Tax:", tax);
+	console.log("Tip:", tip);
+	console.log("Total Cost:", totalCost);
+	console.log("--------------------------------");
+  }
+  
+  let person1 = "Person 1";
+  let itemCost1 = 25.99;
+  let tax1 = 2.08;
+  let tip1 = 5.0;
+  let totalCost1 = itemCost1 + tax1 + tip1;
+  
+  printReceipt(person1, itemCost1, tax1, tip1, totalCost1);
+  
+  
 
 
 
@@ -113,3 +167,21 @@ How many of these upchallenges can you implement?
 - Implement a rewards system (stamp cards, buy one get one, etc)
 
 -------------------------------------------- */
+function calculatePersonCost() {
+	let itemCost;
+	let validInput = false;
+  
+	while (!validInput) {
+	  let userInput = prompt("Enter the cost of the ordered items:");
+	  itemCost = parseFloat(userInput);
+  
+	  if (!isNaN(itemCost)) {
+		validInput = true;
+	  } else {
+		alert("Invalid input! Please enter a valid number.");
+	  }
+	}
+  
+	// Rest of the code...
+  }
+  

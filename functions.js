@@ -15,34 +15,111 @@ const READLINE = require("readline-sync");
 /* -------------------------------------------- 
   Challenge 1: Let's try to write some basic functions.
 -------------------------------------------- */
-
+function greetPerson(namey) {
+	return `Hello, ${namey}!`;
+  }
+  
+  console.log(greetPerson("elly"));
+  
  console.log("------------------- Challenge 1 -------------------")
 
 // **** Challenge 1: Problem 1 ****
 // Write a function called printMessage() that prints any message you want.
+function printMessage(message) {
+	console.log(message);
+  }
+printMessage("Hello, world!");
+printMessage("Welcome to the program!");
+printMessage("This is a custom message.");
 
 
 // **** Challenge 1: Problem 2 ****
 // Write a function called printFiveMessages() that calls printMessage() five times.
 
-
+function printMessage(message) {
+	console.log(message);
+  }
+  
+  function printFiveMessages() {
+	for (let i = 0; i < 5; i++) {
+	  printMessage("This is message #" + (i + 1));
+	}
+  }
+  
+  printFiveMessages();
+  
 // **** Challenge 1: Problem 3 ****
 // Write a function called getUserInput() that asks the user if they'd like to print your message
 // once or five times. Then call one of the two functions above based on what the user decides.
+const readone = require('readline-sync');
+
+function printMessage(message) {
+  console.log(message);
+}
+
+function printFiveMessages() {
+  for (let i = 0; i < 5; i++) {
+    printMessage("This is message #" + (i + 1));
+  }
+}
+
+function getUserInput() {
+  const userInput = readone.question("Would you like to print the message once or five times? Enter 'once' or 'five': ");
+
+  if (userInput === "once") {
+    printMessage("Printing the message once:");
+  } else if (userInput === "five") {
+    printFiveMessages();
+  } else {
+    console.log("Invalid input. Please try again.");
+  }
+}
+
+getUserInput();
 
 
 // **** Challenge 1: Problem 4 ****
 // Write a function called printGreeting() that prints a greeting message to the user.
-
+function printGreeting() {
+	console.log("Welcome! It's nice to meet you.");
+  }
+  
+  printGreeting();
+  
 
 // **** Challenge 1: Problem 5 ****
 // Write a function called printClosing() that prints a goodbye message to the user.
-
+function printClosing() {
+	console.log("Goodbye! Have a great day.");
+  }
+  
+  printClosing();
+  
 
 // **** Challenge 1: Problem 6 ****
 // Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 // Remember! Use the functions that you've already made. Don't hardcode anything!
 
+const readline = require('readline-sync');
+
+function printGreeting() {
+  console.log("Welcome! It's nice to meet you.");
+}
+
+function printClosing() {
+  console.log("Goodbye! Have a great day.");
+}
+
+function run() {
+  printGreeting();
+  
+  const userInput = readline.question("Please enter your input: ");
+  console.log("You entered:", userInput);
+
+  printClosing();
+}
+
+run();
 
 
 /* -------------------------------------------- 
@@ -66,7 +143,18 @@ However, if the two values are the same, the funciton will return double their s
 
 -------------------------------------------- */
 
-
+function sumDouble(a, b) {
+	if (a === b) {
+	  return 2 * (a + b);
+	} else {
+	  return a + b;
+	}
+  }
+  
+  console.log(sumDouble(1, 2)); // Output: 3
+  console.log(sumDouble(3, 2)); // Output: 5
+  console.log(sumDouble(2, 2)); // Output: 8
+  
 
 
 
@@ -88,7 +176,14 @@ Write a function called makes10 that takes two numbers, a and b, and returns tru
 -------------------------------------------- */
 
 
-
+function makes10(a, b) {
+	return a === 10 || b === 10 || a + b === 10;
+  }
+  
+  console.log(makes10(9, 10)); // Output: true
+  console.log(makes10(9, 9)); // Output: false
+  console.log(makes10(1, 9)); // Output: true
+  
 
 
 
@@ -114,7 +209,26 @@ it should be "10:00" and weekends it should be "off".
 
 
 
-
+function alarmClock(day, vacation) {
+	if (vacation) {
+	  if (day === 0 || day === 6) {
+		return "off";
+	  } else {
+		return "10:00";
+	  }
+	} else {
+	  if (day === 0 || day === 6) {
+		return "10:00";
+	  } else {
+		return "7:00";
+	  }
+	}
+  }
+  
+  console.log(alarmClock(1, false)); // Output: "7:00"
+  console.log(alarmClock(6, true)); // Output: "off"
+  console.log(alarmClock(0, false)); // Output: "10:00"
+  
 
 
 
@@ -137,7 +251,20 @@ If speed is 81 or more, the result is 2.
 
 -------------------------------------------- */
 
-
+function checkSpeed(speed) {
+	if (speed <= 60) {
+	  return 0;
+	} else if (speed >= 61 && speed <= 80) {
+	  return 1;
+	} else {
+	  return 2;
+	}
+  }
+  
+  console.log(checkSpeed(55)); // Output: 0
+  console.log(checkSpeed(70)); // Output: 1
+  console.log(checkSpeed(90)); // Output: 2
+  
 
 
 

@@ -29,7 +29,11 @@ for(let i = 0 ; i <=10 ; i++) {
 
 //-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
+const currentAge = 32; // Replace with your actual age
 
+for (let year = 1; year <= currentAge; year++) {
+  console.log(`Year ${year}: Happy Birthday!`);
+}
 
 console.log("------------------- CHALLENGE 2 : ITERATOR ----------------------")
 
@@ -43,9 +47,15 @@ for(let i = 0 ; i< colors.length; i ++) {
 }
 
 //-->TODO: Declare an array with at least 10 animals. You provide the animals.
-let animals = []
+let animals = ['lion', 'elephant', 'tiger', 'giraffe', 'zebra', 'monkey', 'hippo', 'rhino', 'cheetah', 'bear'];
+
 
 //-->TODO: Log all the animals in the array with a for loop. 
+
+
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i]);
+}
 
 
 console.log("------------------- CHALLENGE 3 : DEBUG -------------------------")
@@ -94,9 +104,31 @@ if(random % 2 == 0){
 
 //-->TODO: Write a function that counts BACKWARDS from 100 and logs only odd numbers
 
+function countBackwardsAndLogOddNumbers() {
+    for (let i = 100; i >= 1; i--) {
+      if (i % 2 !== 0) {
+        console.log(i);
+      }
+    }
+  }
+  
+  // Call the function to execute it
+  countBackwardsAndLogOddNumbers();
 
+  
 //-->TODO: Write a function that counts BACKWARDS from the given random number and logs only even numbers
-
+function countBackwardsAndLogEvenNumbers(startNumber) {
+    for (let i = startNumber; i >= 1; i--) {
+      if (i % 2 === 0) {
+        console.log(i);
+      }
+    }
+  }
+  
+  // Call the function with a random number as the starting point
+  const randomStartNumber = Math.floor(Math.random() * 100) + 1;
+  countBackwardsAndLogEvenNumbers(randomStartNumber);
+  
 
 console.log("------------------- CHALLENGE 5 : Finder ------------------")
 
@@ -112,14 +144,37 @@ if(colors.includes(color)){
 
 //-->TODO Declare an array of any strings you  want: cities, friends, movies, etc.
 
+let cities = ['New York', 'London', 'Paris', 'Tokyo', 'Sydney'];
 
 //-->TODO Prompt the user to "Guess" if an element is present. Store their response in a varaible
 
+const readline = require('readline-sync');
+
+// Prompt the user to guess if an element is present
+const userGuess = readline.question("Guess if the element is present: ");
+
+// Print the user's response
+console.log("User's guess:", userGuess);
 
 //-->TODO Write function to prompt the user and see if the element is present. If so, print CONGRATULATIONS!
+const readit = require('readline-sync');
 
+function checkElementPresence(element) {
+  const userGuess = readit.question(`Guess if ${element} is present: `);
 
+  if (userGuess.toLowerCase() === 'yes') {
+    console.log('CONGRATULATIONS!');
+  } else {
+    console.log('Sorry, try again next time.');
+  }
+}
 //-->TODO Call your function.
+// Call the function with the element you want to check
+const elementToCheck = 'apple';
+checkElementPresence(elementToCheck);
+
+
+
 
 
 
@@ -144,7 +199,41 @@ for(let i = 0; i < colors.length ; i++){
 }
 
 //-->TODO Write a function that logs every letter in a sentence that a user enters.
+const readme = require('readline-sync');
+
+function logLettersInSentence() {
+  const sentence = readme.question('Enter a sentence: ');
+
+  for (let i = 0; i < sentence.length; i++) {
+    console.log(sentence[i]);
+  }
+}
+
+// Call the function to execute it
+logLettersInSentence();
 
 
 //-->CHALLENGE Let the user know which word is the shortest one!
+
+const readfirst = require('readline-sync');
+
+function logLettersAndShortestWord() {
+  const sentence = readfirst.question('Enter a sentence: ');
+
+  const words = sentence.split(' ');
+  let shortestWord = words[0];
+
+  for (let i = 0; i < words.length; i++) {
+    console.log(words[i]);
+
+    if (words[i].length < shortestWord.length) {
+      shortestWord = words[i];
+    }
+  }
+
+  console.log(`The shortest word in the sentence is: ${shortestWord}`);
+}
+
+// Call the function to execute it
+logLettersAndShortestWord();
 

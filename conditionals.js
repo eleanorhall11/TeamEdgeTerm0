@@ -17,7 +17,18 @@ console.log("------------------- Challenge 1 -------------------")
     Write conditional statements that print out whether you can drive in your city. */
 
 
+    const readline = require('readline-sync');
 
+    // Prompt the user to enter their age
+    const age = parseInt(readline.question('Enter your age: '));
+    
+    // Check if the age meets the driving requirement
+    if (age >= 16) {
+      console.log('You can drive in your city!');
+    } else {
+      console.log('Sorry, you cannot drive in your city yet.');
+    }
+    
 
 
 
@@ -37,9 +48,26 @@ console.log("------------------- Challenge 2 -------------------")
     Hint: Create three variables and assign them random scores. */
 
 
+// Generate random scores between 0 and 100
+const score1 = Math.floor(Math.random() * 101);
+const score2 = Math.floor(Math.random() * 101);
+const score3 = Math.floor(Math.random() * 101);
 
+console.log('Score 1:', score1);
+console.log('Score 2:', score2);
+console.log('Score 3:', score3);
 
+// Compare the scores using conditional statements
+if (score1 > score2 && score1 > score3) {
+  console.log('Highest score:', score1);
+} else if (score2 > score1 && score2 > score3) {
+  console.log('Highest score:', score2);
+} else if (score3 > score1 && score3 > score2) {
+  console.log('Highest score:', score3);
+} else {
+  console.log('There is a tie or all scores are equal.')
 
+}
 
 
 
@@ -65,6 +93,15 @@ console.log("------------------- Challenge 3 -------------------")
 //Here's a variable to get you started:
 let weather = `rainy`;
 
+if (weather === 'rainy') {
+  console.log('Weather report: Bring an umbrella.');
+} else if (weather === 'sunny') {
+  console.log('Weather report: Wear a hat and sunglasses.');
+} else if (weather === 'snowing') {
+  console.log('Weather report: Wear gloves and a scarf.');
+} else {
+  console.log('Weather report: Check the weather conditions for specific recommendations.');
+}
 
 
 
@@ -92,6 +129,36 @@ let weather = `rainy`;
 */
 
 
+let weathe = 'rainy';
+let temperature = 60;
+
+if (weathe === 'rainy') {
+  if (temperature >= 60) {
+    console.log('Weather report: Bring an umbrella and wear a light jacket.');
+  } else if (temperature >= 40 && temperature < 60) {
+    console.log('Weather report: Bring an umbrella and wear a warmer jacket.');
+  } else {
+    console.log('Weather report: Bring an umbrella and dress warmly.');
+  }
+} else if (weathe === 'sunny') {
+  if (temperature >= 80) {
+    console.log('Weather report: Wear a hat, sunglasses, and light clothing.');
+  } else if (temperature >= 60 && temperature < 80) {
+    console.log('Weather report: Wear a hat, sunglasses, and a light jacket.');
+  } else {
+    console.log('Weather report: Wear a hat, sunglasses, and dress warmly.');
+  }
+} else if (weathe === 'snowing') {
+  if (temperature >= 32) {
+    console.log('Weather report: Wear gloves, a scarf, and a warm coat.');
+  } else if (temperature >= 20 && temperature < 32) {
+    console.log('Weather report: Wear gloves, a scarf, and a heavier coat.');
+  } else {
+    console.log('Weather report: Wear gloves, a scarf, and dress warmly.');
+  }
+} else {
+  console.log('Weather report: Check the weather conditions for specific recommendations.');
+}
 
 
 
@@ -111,7 +178,35 @@ console.log("------------------- Challenge 4 -------------------")
     Make sure to add a statement that accounts of any numbers out of range! */
 
 
+    const read = require('readline-sync');
 
+    // Prompt the user to enter the day of the week
+    // const numString = '42';
+    // const parsedInt = parseInt(numString);
+
+// console.log(parsedInt); // Output: 42
+
+    const dayNumber = parseInt(read.question('Enter a number from 1 to 7 representing the day of the week: '));
+    
+    // Check the day number and print the corresponding day of the week
+    if (dayNumber === 1) {
+      console.log('The day is Monday.');
+    } else if (dayNumber === 2) {
+      console.log('The day is Tuesday.');
+    } else if (dayNumber === 3) {
+      console.log('The day is Wednesday.');
+    } else if (dayNumber === 4) {
+      console.log('The day is Thursday.');
+    } else if (dayNumber === 5) {
+      console.log('The day is Friday.');
+    } else if (dayNumber === 6) {
+      console.log('The day is Saturday.');
+    } else if (dayNumber === 7) {
+      console.log('The day is Sunday.');
+    } else {
+      console.log('Invalid input. Please enter a number from 1 to 7 representing the day of the week.');
+    }
+    
 
 
 
@@ -139,7 +234,22 @@ console.log("------------------- Challenge 1 -------------------")
   year stored in a variable is/was a leap year.*/
 
 
+  let year = 2003;
 
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        console.log(year + ' is a leap year.');
+      } else {
+        console.log(year + ' is not a leap year.');
+      }
+    } else {
+      console.log(year + ' is a leap year.');
+    }
+  } else {
+    console.log(year + ' is not a leap year.');
+  }
+  
 
 
 
